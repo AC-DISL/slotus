@@ -1,0 +1,22 @@
+{
+    "files.associations": {
+        "*.hpp": "cpp",
+        "*.cpp": "cpp",
+        "*.cc": "cpp",
+        "*.h": "cpp"
+    },
+    "fileheader.customMade": {
+        "Author": "git config user.name", 
+        "Date": "Do not edit", 
+        "LastEditors": "git config user.name", 
+        "LastEditTime": "Do not edit",
+        "FilePath": "Do not edit",
+        "Description": "",
+        "custom_string_obkoro1": "", 
+        "custom_string_obkoro1_copyright": "Copyright (c) ${now_year} by aircas, All Rights Reserved. "
+    },
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "terminal.integrated.ignoreBracketedPasteMode": true
+}
