@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "363ce7cf_c497ed2d",
+        "filename": ".vscode/c_cpp_properties.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1038110
+      },
+      "writtenOn": "2024-06-17T06:03:41Z",
+      "side": 1,
+      "message": "删除不需要的define",
+      "revId": "bd11e6bfff899f35f50b40f44cf6e86acaa70b74",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
