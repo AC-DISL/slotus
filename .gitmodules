@@ -1,0 +1,3 @@
+[submodule "third_party/xlog"]
+	path = third_party/xlog
+	url = git@github.com:AC-DISL/xlog.git
