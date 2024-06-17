@@ -1,0 +1,5 @@
+build/*
+
+# Protobuf-generated files
+*.pb.h
+*.pb.cc
