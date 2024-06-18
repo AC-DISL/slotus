@@ -1,0 +1,103 @@
+syntax = "proto3";
+
+package slotus;
+
+service SubmitService {
+  rpc JobSubmit (Job) returns (JobStatus) {}
+}
+
+message Job {
+  string name = 1;
+  string files = 2;
+  int32 attemptmaxnum = 3;
+  Task task = 4;
+}
+
+message Task {
+  message MetaData {
+    string name = 1;
+    string submitter = 2;
+    string address = 3;
+    string now_time = 4;
+    string start_time = 5;
+    string extire_time = 6;
+    string parent_task = 7;
+  }
+
+  message ResourceConf {
+    float vcores = 1;
+    int32 memoryMb = 2;
+  }
+
+  message RuntimeConf {
+    message KubernetesNativeConf {
+      string namespace = 1;
+      message ExecutorPodConf {
+        message MainContainerConf {
+          string name = 1;
+          string kind = 2;
+          string imageName = 3;
+          string imagepullpolicy = 4;
+          repeated string command = 5;
+          repeated string args = 6;
+          int32 port = 7;
+          int32 containerPort = 8;
+          int32 targetPort = 9;
+          int32 nodePort = 10;
+          string serviceType = 11;
+          message Mounts {
+            string hostPath = 1;
+            string mountPath = 2;
+          };
+
+          Mounts mounts = 12;
+        }
+
+        MainContainerConf mainContainerConf = 1;
+        int32 replicas = 2;
+      }
+
+      ExecutorPodConf executorPodConf = 2;
+    }
+
+    KubernetesNativeConf kubernetesNativeConf = 1;
+
+    message ContainerEnv {
+      map<string, string> env = 1;
+    }
+
+    ContainerEnv containerEnv = 2;
+  }
+
+  message InputData {
+    string name = 1;
+    message Spec {
+      string InputPath = 1;
+      string InputName = 2;
+      string TextInput = 3;
+    }
+
+    Spec spec = 2;
+  }
+
+  message OutputData {
+    string name = 1;
+    message Spec {
+      string OutputPath = 1;
+      string OutputName = 2;
+      string TextOutput = 3;
+    }
+
+    Spec spec = 2;
+  }
+
+  MetaData meta_data = 1;
+  ResourceConf resource_conf = 2;
+  RuntimeConf runtime_conf = 3;
+  InputData input_data = 4;
+  OutputData output_data = 5;
+}
+
+message JobStatus {
+  string status = 1;
+}

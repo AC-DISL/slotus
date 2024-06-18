@@ -1,3 +1,6 @@
 [submodule "third_party/xlog"]
 	path = third_party/xlog
 	url = git@github.com:AC-DISL/xlog.git
+[submodule "third_party/nlohmann"]
+	path = third_party/nlohmann
+	url = git@github.com:nlohmann/json.git
