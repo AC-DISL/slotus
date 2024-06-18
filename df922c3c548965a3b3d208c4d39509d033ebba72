@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ed57ce9_4731124b",
+        "filename": "src/utils/common.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1037978
+      },
+      "writtenOn": "2024-06-18T10:19:00Z",
+      "side": 1,
+      "message": "尽量少用",
+      "revId": "df922c3c548965a3b3d208c4d39509d033ebba72",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
