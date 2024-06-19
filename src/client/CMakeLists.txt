@@ -8,16 +8,16 @@ include_directories(
 )
 
 
-set(GRPC_SRCS
+set(GRPC_CLIENT_SRCS
   ${PROJECT_SOURCE_DIR}/src/utils/protobuf/job.pb.cc
   ${PROJECT_SOURCE_DIR}/src/utils/protobuf/job.grpc.pb.cc
   grpc-client/submit_client.cpp
 )
 
-add_library(job_grpc_proto SHARED
-  ${GRPC_SRCS}
+add_library(client_grpc_proto SHARED
+  ${GRPC_CLIENT_SRCS}
 )
-target_link_libraries(job_grpc_proto
+target_link_libraries(client_grpc_proto
   ${_REFLECTION}
   ${_GRPC_GRPCPP}
   ${_PROTOBUF_LIBPROTOBUF}
@@ -25,14 +25,14 @@ target_link_libraries(job_grpc_proto
 
 
 
-set(client_SRCS
+set(CLIENT_SRCS
   main.cc
   ${PROJECT_SOURCE_DIR}/src/utils/common.cc
 )
-add_executable(slotus_client ${client_SRCS})
+add_executable(slotus_client ${CLIENT_SRCS})
 
 target_link_libraries(slotus_client 
-  job_grpc_proto
+  client_grpc_proto
   ${_REFLECTION}
   ${_GRPC_GRPCPP}
   ${_PROTOBUF_LIBPROTOBUF}

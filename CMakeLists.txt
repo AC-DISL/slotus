@@ -10,3 +10,4 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE  ${PROJECT_SOURCE_DIR}/build/lib/Rele
 
 add_subdirectory(third_party/xlog)
 add_subdirectory(src/client)
+add_subdirectory(src/server)

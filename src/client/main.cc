@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <memory>
 #include <fstream>
 #include <nlohmann/json.hpp>
 #include <grpcpp/grpcpp.h>
@@ -13,6 +12,8 @@ const int kGrpcPort = 50050;
 
 int main(int argc, char *argv[]) {
 
+    xLogInit("slotus_client.log");
+    
     if (argc < 2) {
         LOG_INFO("Usage: ./client <command>, available command: *.json/stop/start/status/help/exit");
         return 1;
